@@ -24,7 +24,7 @@ class Transaction(models.Model):
     num_id_account = models.ForeignKey(SavingsAccount, on_delete=models.CASCADE)
     str_type_transaction = models.CharField(max_length=10)
     dtm_transaction_date = models.DateField()
-    num_amount_transaction = models.IntegerFiel(null=True, blank=True)
+    num_amount_transaction = models.IntegerField(null=True, blank=True)
 
     class Meta:
         db_table = 'djn_tbl_transaction'

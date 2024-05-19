@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ac@q=cbmp2bdhv#!pr!0jp&+%m7smi0kkm^0&024y_n25pe7b4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -39,7 +39,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'AdminApp',
     'ClientApp',
+    'SavingsAccount',
+    'rest_framework',
+    'corsheaders',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAUL_PERMISION_CLASSES' : [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -49,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'AppSavingsAccount.urls'
@@ -127,3 +137,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True

@@ -1,0 +1,48 @@
+<header>
+
+</header>
+<main>
+    <section>
+        <h1>Listar Clientes</h1>
+    <form id="filterForm">
+        <label for="documentType">Tipo de Documento:</label>
+        <select id="documentType">
+            <option value="CC">CC</option>
+            <option value="CE">CE</option>
+            <option value="NIT">NIT</option>
+            <option value="TI">TI</option>
+        </select>
+        <label for="documentNumber">Número de Documento:</label>
+        <input type="text" id="documentNumber">
+        <button type="submit">Filtrar</button>
+    </form>
+    </section>
+    <section>
+        <table>
+            <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Type Document</th>
+                    <th>Document</th>
+                    <th>Email</th>
+                    <th>State</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let client of client">
+                    <td>{{client.fullName}}</td>
+                    <td>{{client.documentType}}</td>
+                    <td>{{client.document}}</td>
+                    <td>{{client.email}}</td>
+                    <td>{{client.state}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section>
+        <button routerLink="/admin-login/manageAdmin">Back</button>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2024 Client Management. All rights reserved.</p>
+</footer>
