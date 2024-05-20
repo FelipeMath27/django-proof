@@ -1,0 +1,90 @@
+header {
+    background-color: #12372A; /* Color de fondo del encabezado */
+    color: #FBFADA; /* Color del texto del encabezado */
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  section {
+    margin-bottom: 20px;
+  }
+  
+
+  
+  h1{
+    margin: 0 0 10px; /* Margen inferior para el título principal */
+    color: #FBFADA; 
+  }
+  
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  label {
+    margin-right: 10px;
+  }
+  
+  select,
+  input[type="text"] {
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc; /* Borde de los elementos de entrada */
+  }
+  
+  button[type="submit"],
+  button[routerLink] {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #12372A; 
+    color: #FBFADA; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover,
+  button[routerLink]:hover {
+    background-color: #436850;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  thead {
+    background-color: #12372A; 
+    color: #FBFADA; 
+  }
+  
+  thead th,
+  tbody td {
+    padding: 10px;
+    border: 1px solid #ccc; 
+  }
+  
+  tfoot {
+    background-color: #12372A; 
+    color: #FBFADA; 
+  }
+  
+  footer {
+    background-color: #12372A; 
+    color: #FBFADA; 
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0
+}

@@ -13,6 +13,10 @@ class Client(models.Model):
         db_table = 'djn_tbl_client'
         app_label = 'ClientApp' 
 
+    def __str__(self):
+        return self.name
+    
+
 class Password(models.Model):
     num_id_pswrd = models.AutoField(primary_key=True)
     num_id_client = models.ForeignKey(Client, on_delete=models.CASCADE)
@@ -21,3 +25,6 @@ class Password(models.Model):
     class Meta:
         db_table = 'djn_tbl_psw'
         app_label = 'ClientApp'
+    
+    def __str__(self):
+        return self.name

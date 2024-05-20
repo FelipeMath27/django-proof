@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import Client from './interfaces/Client'
-import { HttpClient } from '@angular/common/http';
+import Client from './interfaces/Client';
+import { HttpClient, HttpParams} from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -8,23 +8,20 @@ import { Observable } from 'rxjs';
 })
 export class ClientService {
 
-  private apiUrl : string = "http://127.0.0.1:8000/client/createClient" 
+  private apiUrl : string = "http://127.0.0.1:8000/manageClient/" 
+  private apiUrlPasw : string = "http://127.0.0.1:8000/client/createPassword"
+
   constructor(private http: HttpClient) { }
 
-  createClient(client : Client):Observable<Client>{
-    return this.http.post<Client>(`${this.apiUrl}+client/`, client)
+  createClient(client : Client): Observable<Client>{
+    return this.http.post<Client>(`${this.apiUrl}client/`, client)
   }
 
-  updateClient(id: number, client : Client):Observable<Client>{
-    return this.http.put<Client>(`${this.apiUrl}+client/${id}/`,client)
+  getClientsId(id: number): Observable<Client> {
+    return this.http.get<Client>(`${this.apiUrl}client/${id}`);
   }
 
-  viewClient(id: number) : Observable<Client>{
-    return this.http.get<Client>(`${this.apiUrl}+client/+${id}`)
+  getClients(): Observable<Client[]> {
+    return this.http.get<Client[]>(`${this.apiUrl}client/`);
   }
-
-  deleteClient(id: number, client : Client) :Observable<Client>{
-    return this.http.put<Client>(`${this.apiUrl}+client/${id}/`,client)
-  }
-
 }

@@ -5,14 +5,17 @@ import { LoginClientComponent } from './login-client/login-client.component';
 import { CreatePasswordComponent } from './create-password/create-password.component';
 import { AdminComponent } from './admin/admin.component';
 import { CreateClientComponent } from './create-client/create-client.component';
+import { ViewClientComponent } from './view-client/view-client.component';
+
 
 export const routes: Routes = [
   {path : '', redirectTo: 'client-login', pathMatch: 'full'},
   {path : 'admin-login', component: LoginAdminComponent},
   {path : 'client-login', component: LoginClientComponent},
   {path : 'create-password' , component : CreatePasswordComponent},
-  {path : 'admin-login/manageAdmin', component: AdminComponent},
-  {path : 'admin-login/manageAdmin/createClient', component: CreateClientComponent}
+  {path : 'manageAdmin', component: AdminComponent},
+  {path : 'manageAdmin/createClient', component: CreateClientComponent},
+  {path : 'manageAdmin/getClient/:document', component: ViewClientComponent},
 ];
 
 @NgModule({

@@ -1,20 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../client.service';
+import Client from '../interfaces/Client';
+
 @Component({
   selector: 'app-view-client',
   templateUrl: './view-client.component.html',
-  styleUrl: './view-client.component.css'
+  styleUrls: ['./view-client.component.css']
 })
-export class ViewClientComponent {
+export class ViewClientComponent implements OnInit {
 
-  client : any | undefined
+  clients: Client[] =[]
 
-  constructor(private clientService : ClientService){}
+  constructor(private clientService: ClientService) {}
 
-  ngOnInit() : void {
-    this.clientService.viewClient(1).subscribe(data=> {
-      this.client = data
-      console.log(data);
-    })
+  ngOnInit(): void {
+    this.getClients();
+  }
+
+  getClients(): void {
+    this.clientService.getClients().subscribe(
+      (data) => {
+        this.clients = data;
+        console.log(data);
+      },
+      (error) => {
+        console.error('Error fetching clients', error);
+      }
+    );
   }
 }

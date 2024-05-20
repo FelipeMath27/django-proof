@@ -3,26 +3,26 @@
 </header>
 <main>
     <section>   
-        <form [formGroup]="form" (ngSubmit)="createClient">
+        <form [formGroup]="form">
             <label for="fullname">Full Name</label>
-            <input type="text" formControlName="fullName" id="fullname" name="fullname" required>
-            <label for="type">Type of Identification</label>
-            <select name="document-type" formControlName="documentType" id="document-type" required>
+            <input type="text" formControlName="str_fullname_client" id="fullname" name="fullname" required>
+            <label for="document-type">Type of Identification</label>
+            <select name="document-type" formControlName="str_type_identification" id="document-type" required>
                 <option value="CC">CC</option>
                 <option value="CE">CE</option>
                 <option value="NIT">NIT</option>
                 <option value="TI">TI</option>
             </select>
             <label for="identification">Identification Number</label>
-            <input type="text" formControlName="document" id="identification" name="identification" required>      
+            <input type="text" formControlName="str_identification_number" id="identification" name="identification" required>      
             <label for="email">Email:</label>
-            <input type="email" formControlName="email" id="email" name="email" required> 
-            <label for="type">State</label>
-            <select name="state-type" formControlName="state" id="state-type" required>
+            <input type="email" formControlName="str_email_client" id="email" name="email" required> 
+            <label for="state-type">State</label>
+            <select name="state-type" formControlName="str_state" id="state-type" required>
                 <option value="ACT">ACT</option>
                 <option value="INA">INA</option>
             </select>    
-            <button type="submit" [disabled]="!form.valid">Create Client</button>
+            <button type="submit" (click)="onSubmit()" routerLink="/manageAdmin">Create Client</button>
           </form>       
     </section>
 </main>

@@ -1,22 +1,7 @@
 <header>
-
+    <h1>Hello Admin, check the clients in this section.</h1>
 </header>
 <main>
-    <section>
-        <h1>Listar Clientes</h1>
-    <form id="filterForm">
-        <label for="documentType">Tipo de Documento:</label>
-        <select id="documentType">
-            <option value="CC">CC</option>
-            <option value="CE">CE</option>
-            <option value="NIT">NIT</option>
-            <option value="TI">TI</option>
-        </select>
-        <label for="documentNumber">Número de Documento:</label>
-        <input type="text" id="documentNumber">
-        <button type="submit">Filtrar</button>
-    </form>
-    </section>
     <section>
         <table>
             <thead>
@@ -29,18 +14,18 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let client of client">
-                    <td>{{client.fullName}}</td>
-                    <td>{{client.documentType}}</td>
-                    <td>{{client.document}}</td>
-                    <td>{{client.email}}</td>
-                    <td>{{client.state}}</td>
+                <tr *ngFor="let client of clients">
+                    <td>{{client.str_fullname_client}}</td>
+                    <td>{{client.str_type_identification}}</td>
+                    <td>{{client.str_identification_number}}</td>
+                    <td>{{client.str_email_client}}</td>
+                    <td>{{client.str_state}}</td>
                 </tr>
             </tbody>
         </table>
     </section>
     <section>
-        <button routerLink="/admin-login/manageAdmin">Back</button>
+        <button routerLink="/manageAdmin">Back</button>
     </section>
 </main>
 <footer>

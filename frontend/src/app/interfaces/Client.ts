@@ -1,10 +1,10 @@
-type DocumentType = 'CC' | 'CE' | 'NIT' | 'ti' ;
-type StateType = 'ACT' | 'INA';
+export type DocumentType = 'CC' | 'CE' | 'NIT' | 'TI' ;
+export type StateType = 'ACT' | 'INA';
 
 export default interface Client{
-    fullName : string;
-    documentType : DocumentType;
-    document : string;
-    email : string;
-    state : StateType;
+    str_fullname_client : string;
+    str_type_identification : DocumentType;
+    str_identification_number : string;
+    str_email_client : string;
+    str_state : StateType;
 }

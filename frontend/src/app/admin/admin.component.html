@@ -1,16 +1,19 @@
 <header>
-    <h1>Client Management</h1>
-  </header>
-  
-  <main>
-    <ul>
-      <li><a href="#">Create Client</a></li>
-      <li><a href="#">Consult Client</a></li>
-      <li><a href="#">Update Client</a></li>
-      <li><a href="#">Delete Client</a></li>
-    </ul>
-  </main>
-  
-  <footer>
-    <p>&copy; 2024 Client Management. All rights reserved.</p>
-  </footer>
+  <h1>Client Management</h1>
+</header>
+
+<main>
+  <h3>Hello Admin, remember to be careful with every process you carry out</h3>
+  <ul>
+    <li><a routerLink="/manageAdmin/createClient">Create Client</a></li>
+    <li><a href="/manageAdmin/getClient/:id">Consult Client</a></li>
+    <li><a href="/manageAdmin/" (click)="showMaintenance()">Update Client</a></li>
+    <li><a href="/manageAdmin/" (click)="showMaintenance()">Delete Client</a></li>
+  </ul>
+  <button type="button" (click)="logoutAdmin()">SignOut</button>
+</main>
+
+
+<footer>
+  <p>&copy; 2024 Client Management. All rights reserved.</p>
+</footer>

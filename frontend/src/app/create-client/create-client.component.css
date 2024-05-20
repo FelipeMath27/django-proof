@@ -21,6 +21,9 @@ section {
     font-size: large;
 }
 
+h2{
+    text-align: center;
+}
 
 form {
     display: flex;

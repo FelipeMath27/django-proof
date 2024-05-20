@@ -6,29 +6,32 @@ import { AdminComponent } from './admin/admin.component';
 import { ClientComponent } from './client/client.component';
 import { CreateClientComponent } from './create-client/create-client.component';
 import { CreatePasswordComponent } from './create-password/create-password.component';
-import { InactiveClientComponent } from './inactive-client/inactive-client.component';
 import { LoginAdminComponent } from './login-admin/login-admin.component';
 import { LoginClientComponent } from './login-client/login-client.component';
-import { UpdateClientComponent } from './update-client/update-client.component';
 import { ViewClientComponent } from './view-client/view-client.component';
 
 import { AppRoutingModule } from './app-routing.module';
-import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, provideHttpClient,withFetch } from '@angular/common/http';
+import { ClientService } from './client.service';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
-    AppComponent, AdminComponent, ClientComponent, CreateClientComponent, CreatePasswordComponent,
-    InactiveClientComponent, LoginAdminComponent,LoginClientComponent,UpdateClientComponent,ViewClientComponent
+    AppComponent, AdminComponent, ClientComponent, CreateClientComponent, CreatePasswordComponent, LoginAdminComponent,LoginClientComponent,ViewClientComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule,
+    FormsModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideHttpClient(withFetch()),
+    ClientService
   ],
   bootstrap: [AppComponent]
 })

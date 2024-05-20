@@ -4,13 +4,14 @@
 <main class="main-login">
     <section class="login">
         <h2>Login</h2>
-        <form>
+        <form (ngSubmit)="loginAdmin()">
             <label for="username">User</label>
-            <input type="text" name="username" id="name" required>
+            <input type="text" [(ngModel)]="admin.str_user_admin" name="username" id="username" required>
             <label for="password">Password</label>
-            <input type="password" name="password" id="password" required>
-            <button>Sign in</button>
+            <input type="password" [(ngModel)]="admin.str_pasw" name="password" id="password" required>
+            <button type="submit">Sign in</button>
         </form>
+        <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
     </section>
 </main>
 <footer class="footer-login">

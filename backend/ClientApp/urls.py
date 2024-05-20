@@ -1,7 +1,11 @@
-from django.urls import path
-from .views import CreateClienteView, CreatePasswordView
+from django.urls import path, include
+from rest_framework import routers
+from ClientApp import views
+
+router=routers.DefaultRouter()
+router.register(r'client', views.ClienteView)
+
 
 urlpatterns = [
-    path('createClient/', CreateClienteView.as_view(), name='create-client'),
-    path('createPassword/', CreatePasswordView.as_view(), name='create-password'),
+    path('', include(router.urls)),
 ]
