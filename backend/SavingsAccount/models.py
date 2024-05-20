@@ -5,7 +5,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 # Create your models here.
 class SavingsAccount(models.Model):
     num_id_account = models.AutoField(primary_key=True)
-    num_id_client = models.ForeignKey(Client, on_delete=models.CASCADE)
+    num_id_client = models.ForeignKey(Client, on_delete=models.CASCADE, db_column='num_id_client')
     num_amount_balance = models.IntegerField(
         validators=[
             MinValueValidator(0),

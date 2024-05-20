@@ -1,0 +1,84 @@
+header {
+    background-color: #1A1A1A;
+    color: #E0E0E0;
+    text-align: center;
+    padding: 20px 0;
+}
+
+h1 {
+    margin: 0;
+    font-size: 28px;
+    text-transform: uppercase;
+}
+
+/* Estilos para el contenido principal */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 160px);
+}
+
+h3 {
+    margin: 20px 0;
+    color: #333333;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+ul li a {
+    display: block;
+    background-color: #4CAF50;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+ul li a:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: #1A1A1A;
+    color: #E0E0E0;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Estilos para los botones */
+button[type="submit"],
+button[routerLink] {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50; 
+    color: #FFFFFF; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="button"] {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #12372A; 
+    color: #FBFADA; 
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button[type="button"]:hover {
+    background-color: #436850;
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el cursor sobre el botón */
+}

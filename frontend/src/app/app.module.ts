@@ -15,10 +15,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, provideHttpClient,withFetch } from '@angular/common/http';
 import { ClientService } from './client.service';
 import { CommonModule } from '@angular/common';
+import { CreateAccountComponent } from './create-account/create-account.component';
+import { ManageAccountComponent } from './manage-account/manage-account.component';
 
 @NgModule({
   declarations: [
-    AppComponent, AdminComponent, ClientComponent, CreateClientComponent, CreatePasswordComponent, LoginAdminComponent,LoginClientComponent,ViewClientComponent
+    AppComponent, AdminComponent, ClientComponent, CreateClientComponent, CreatePasswordComponent, LoginAdminComponent,LoginClientComponent,ViewClientComponent, CreateAccountComponent, ManageAccountComponent
   ],
   imports: [
     BrowserModule,

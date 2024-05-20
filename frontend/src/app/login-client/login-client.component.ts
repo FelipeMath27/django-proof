@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
+import LoginClient from '../interfaces/LoginClient';
+
 
 @Component({
   selector: 'app-login-client',
@@ -8,15 +11,17 @@ import { Router } from '@angular/router';
   styleUrls: ['../app.component.css']
 })
 export class LoginClientComponent {
-  email: string = '';
-  password: string = '';
 
-  constructor(private http: HttpClient, private router: Router) {}
+  client : LoginClient = {
+    email:  '',
+    new_password: ''
+  };
+  
 
-  onSubmit() {
-    const clientData = { email: this.email, password: this.password }; // Ajusta los nombres de los campos
-    this.http.post<any>('http://127.0.0.1:8000/manageClient/login_client/', clientData)
-      .subscribe(response => {
+  constructor(private http: HttpClient, private authService: AuthService, private router: Router) {}
+
+  loginClient() {
+      this.authService.signInClient(this.client).subscribe(response => {
         console.log(response);
         if (response.message === 'Login successful') {
           this.router.navigate(['/client-login/home']);

@@ -9,6 +9,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.decorators import api_view
 from utils.utils import HashPassword
+from django.contrib.auth import authenticate, login
 
 class ClienteView(viewsets.ModelViewSet):
     queryset = Client.objects.all()
@@ -50,12 +51,6 @@ def create_password(request):
 
     return Response({'error': 'Method not allowed'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from rest_framework import status
-from utils.utils import HashPassword
-from .models import Client, Password
-
 @api_view(['POST'])
 def clientSignIn(request):
     if request.method == 'POST':
@@ -79,4 +74,10 @@ def clientSignIn(request):
     else:
         return Response({'error': 'Method not allowed'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
+@api_view(['POST'])
+def clientSignOut(request):
+    if request.method == 'POST':
+        return Response({'message': 'Logout successful'}, status=status.HTTP_200_OK)
+    else:
+        return Response({'error': 'Method not allowed'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 

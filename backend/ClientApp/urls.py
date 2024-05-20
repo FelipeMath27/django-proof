@@ -10,4 +10,5 @@ urlpatterns = [
     path('', include(router.urls)),
     path('create_password/', views.create_password, name='create_password'),
     path('login_client/', views.clientSignIn, name='clientSignIn'),
+    path('logout_client/', views.clientSignOut, name='clientSignOut'),
 ]
