@@ -52,34 +52,34 @@ Use the provided [DDL file](DDL_DJANGO_PROOF.SQL) to create the necessary tables
 ## Consideration to manage de app for first time
 ### New Routes Added:
 
-- **[Admin Login](http://localhost:4200/admin-login)**
+- **Admin Login Route: http://localhost:4200/admin-login**
   - Exclusive access route for administrators. Allows direct login from the URL without the need to navigate through the homepage.
 
-- **[Manage Admin](http://localhost:4200/manageAdmin)**
+- **Manage Admin Route: http://localhost:4200/manageAdmin**
   - After logging in as an administrator, this route directs to the interface where new clients can be created or the list of existing clients can be viewed.
 
-- **[Create Client](http://localhost:4200/createClient)**
+- **Create Client Route: http://localhost:4200/createClient**
   - Interface intended for creating a new client. Here, the necessary data is collected to register a new user in the system.
 
-- **[Get Client](http://localhost:4200/manageAdmin/getClient/:document)**
+- **Get Client Route: http://localhost:4200/manageAdmin/getClient/:document**
   - Provides an interface to view specific details of a client, identified by their document number.
 
-- **[Home](http://localhost:4200)**
+- **Home Route: http://localhost:4200**
   - Default interface for the login page. This is where users, whether administrators or clients, can log into the system.
 
-- **[Create Password](http://localhost:4200/create-password)**
+- **Create Password Route: http://localhost:4200/create-password**
   - After creating a new client, this interface allows the client to set a password for their account.
 
-- **[Client Login](http://localhost:4200/client-login)**
+- **Client Login Route: http://localhost:4200/client-login**
   - Login interface for clients. Once a client has set their password, they can use this route to log into their account.
 
-- **[Home](http://localhost:4200/home)**
+- **Home Route: http://localhost:4200/home**
   - After logging in as a client, this interface provides access to various functions such as creating a savings account or managing existing accounts.
 
-- **[Create Account](http://localhost:4200/client-login/home/createAccount)**
+- **Create Account Route: http://localhost:4200/client-login/home/createAccount**
   - Interface where clients can create new savings accounts.
 
-- **[Manage Account](http://localhost:4200/client-login/home/manageAccount)**
+- **Manage Account Route: http://localhost:4200/client-login/home/manageAccount**
   - This interface allows clients to check balance, withdraw, or deposit funds into their existing savings accounts.
 
 
