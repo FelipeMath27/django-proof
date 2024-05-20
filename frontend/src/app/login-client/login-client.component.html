@@ -1,0 +1,20 @@
+<header class="header-login">
+    <h1>Welcome to your best finance option</h1>
+</header>
+<main class="main-login">
+    <section class="login">
+        <h2>Login</h2>
+        <form (ngSubmit)="loginClient()">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" [(ngModel)]="client.email" required>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" [(ngModel)]="client.new_password" required>
+            <button type="submit">Sign in</button>
+            <h4>If this is your first time logging in, create the password.</h4>
+            <a routerLink="/create-password">Create Password</a>
+        </form>
+    </section>
+</main>
+<footer class="footer-login">
+    <p>&copy; 2024 Client Management. All rights reserved.</p>
+</footer>

@@ -1,0 +1,17 @@
+<header>
+    <h1>Open Savings Account</h1>
+</header>
+<main>
+    <section>   
+        <form (ngSubmit)="createAccount()">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" [(ngModel)]="email" required> 
+            <label for="amount">Initial Balance:</label>
+            <input type="number" id="amount" name="amount" min="0" [(ngModel)]="amount_balance" required>      
+            <button type="submit">Open Savings Account</button>
+        </form>       
+    </section>
+</main>
+<footer>
+    <p>&copy; 2024 Client Management. All rights reserved.</p>
+</footer>

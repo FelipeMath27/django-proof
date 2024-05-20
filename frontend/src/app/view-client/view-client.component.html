@@ -1,0 +1,33 @@
+<header>
+    <h1>Hello Admin, check the clients in this section.</h1>
+</header>
+<main>
+    <section>
+        <table>
+            <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Type Document</th>
+                    <th>Document</th>
+                    <th>Email</th>
+                    <th>State</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let client of clients">
+                    <td>{{client.str_fullname_client}}</td>
+                    <td>{{client.str_type_identification}}</td>
+                    <td>{{client.str_identification_number}}</td>
+                    <td>{{client.str_email_client}}</td>
+                    <td>{{client.str_state}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section>
+        <button routerLink="/manageAdmin">Back</button>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2024 Client Management. All rights reserved.</p>
+</footer>

@@ -1,0 +1,17 @@
+<header>
+  <h1>Client Management</h1>
+</header>
+
+<main>
+  <h3>Hello Admin, remember to be careful with every process you carry out</h3>
+  <ul>
+    <li><a routerLink="/client-login/home/createAccount">Create Account</a></li>
+    <li><a routerLink="/client-login/home/manageAccount">Manage Account</a></li>
+  </ul>
+  <button type="button" (click)="logoutClient()">Sign Out</button>
+  <p *ngIf="errorMessage">{{ errorMessage }}</p>
+</main>
+
+<footer>
+  <p>&copy; 2024 Client Management. All rights reserved.</p>
+</footer>
