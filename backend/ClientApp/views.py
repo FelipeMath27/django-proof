@@ -9,7 +9,6 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.decorators import api_view
 from utils.utils import HashPassword
-from django.contrib.auth import authenticate, login
 
 class ClienteView(viewsets.ModelViewSet):
     queryset = Client.objects.all()
