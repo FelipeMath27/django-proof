@@ -11,16 +11,18 @@
     <table>
       <thead>
         <tr>
+          <th>#Product</th>
           <th>Number Account</th>
           <th>Amount Balance</th>
           <th>Open Account</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
+        <tr *ngFor="let account of accountsClient">
+          <td>{{account.num_id_account}}</td>
+          <td>{{account.str_number_account}}</td>
+          <td>{{account.amount_balance}}</td>
+          <td>{{account.dtm_open_account}}</td>
         </tr>
       </tbody>
     </table>
