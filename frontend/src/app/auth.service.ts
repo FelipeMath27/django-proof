@@ -6,6 +6,7 @@ import ClientPsw from './interfaces/ClientPsw';
 import LoginClient from './interfaces/LoginClient';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +15,9 @@ export class AuthService {
 
   private isAuthenticated: boolean = false;
   private emailClient: string = '';
+  private redirectUrl: string = '';
 
-  constructor(private http: HttpClient, @Inject(PLATFORM_ID) private platformId: Object)  { 
+  constructor(private http: HttpClient, @Inject(PLATFORM_ID) private platformId: Object, private router : Router)  { 
     if (isPlatformBrowser(this.platformId)) {
       const storedEmail = localStorage.getItem('emailClient');
       if (storedEmail) {
@@ -53,6 +55,12 @@ export class AuthService {
             this.setEmailClient(client.email); 
             this.setAuthenticated();
             localStorage.setItem('emailClient', client.email);
+            if (this.redirectUrl) {
+              this.router.navigateByUrl(this.redirectUrl);
+              this.clearRedirectUrl();
+            } else {
+              this.router.navigate(['/client-login/home']);
+            }
           }
         })
       );
@@ -65,6 +73,10 @@ export class AuthService {
         if (response.message === 'Logout successful') {
           this.emailClient = '';
           this.setUnauthenticated();
+          this.clearRedirectUrl();
+          this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+            this.router.navigate(['/client-login']);
+          });
         }
       })
     );
@@ -89,6 +101,14 @@ export class AuthService {
 
   public setUnauthenticated(): void {
     this.isAuthenticated = false;
+  }
+
+  public setRedirectUrl(url: string): void {
+    this.redirectUrl = url;
+  }
+
+  private clearRedirectUrl(): void {
+    this.redirectUrl = '';
   }
   
 }

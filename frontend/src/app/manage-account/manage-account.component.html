@@ -1,34 +1,60 @@
 <header>
-    <h1>Client Products</h1>
-  </header>
-  
-  <main>
-    <div class="actions">
-        <button>Consult Balance</button>
-        <button>Deposit</button>
-        <button>Withdraw</button>
-      </div>
-    <table>
+  <h1>Client Products</h1>
+</header>
+
+<main>
+  <div class="actions">
+      <button (click)="showDepositSection()">Deposit</button>
+      <button (click)="showWithdrawSection()">Withdraw</button>
+      <button (click)="getBalanceAccount()">Consult Balance</button>
+      <button (click)="clearAccountNumber()">Clear Account Number</button>
+  </div>
+  <p class="instruction">If you want to consult, withdraw, or deposit into one of your accounts, enter the account number here:</p>
+  <div class="input-wrapper">
+      <input type="text" [(ngModel)]="account_number" placeholder="Enter account ID">
+  </div>
+  <table>
       <thead>
-        <tr>
-          <th>#Product</th>
-          <th>Number Account</th>
-          <th>Amount Balance</th>
-          <th>Open Account</th>
-        </tr>
+          <tr>
+              <th>#Product</th>
+              <th>Number Account</th>
+              <th>Open Account</th>
+          </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let account of accountsClient">
-          <td>{{account.num_id_account}}</td>
-          <td>{{account.str_number_account}}</td>
-          <td>{{account.amount_balance}}</td>
-          <td>{{account.dtm_open_account}}</td>
-        </tr>
+          <tr *ngFor="let account of accountsClient">
+              <td>{{account.num_id_account}}</td>
+              <td>{{account.str_number_account}}</td>
+              <td>{{account.dtm_open_account}}</td>
+          </tr>
       </tbody>
-    </table>
-    
-  </main>
+  </table>
+
+  <div *ngIf="showDeposit" class="deposit-section">
+    <p class="deposit-message">Welcome to your secure deposit - enter the amount to deposit</p>
+    <div class="input-wrapper">
+      <input type="number" [(ngModel)]="depositAmount" placeholder="Enter amount">
+    </div>
+    <button (click)="confirmDeposit()">Accept</button>
+  </div>
+
+  <div *ngIf="showWithdraw" class="withdraw-section">
+    <p class="withdraw-message">Enter the amount to withdraw</p>
+    <div class="input-wrapper">
+      <input type="number" [(ngModel)]="withdrawAmount" placeholder="Enter amount">
+    </div>
+    <button (click)="withdrawFromAccount()">Accept</button>
+  </div>
   
-  <footer>
-    <p>&copy; 2024 Client Management. All rights reserved.</p>
-  </footer>
+  <div *ngIf="showBalance && balance !== undefined && isBalanceValid" class="balance-box">
+    <p class="balance-message">The balance of your account "{{ account_number }}" is:</p>
+    <p class="balance-text">Balance: {{ balance | currency:'COP':'symbol':'1.0-0' }}</p>
+  </div>
+  <div *ngIf="showBalance && !isBalanceValid" class="balance-box">
+    <p class="error-message">Invalid balance value</p>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2024 Client Management. All rights reserved.</p>
+</footer>

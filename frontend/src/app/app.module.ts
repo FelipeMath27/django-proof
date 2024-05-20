@@ -17,10 +17,13 @@ import { ClientService } from './client.service';
 import { CommonModule } from '@angular/common';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { ManageAccountComponent } from './manage-account/manage-account.component';
+import { BalanceComponent } from './manage-account/balance/balance.component';
+import { DepositComponent } from './manage-account/deposit/deposit.component';
+import { WithdrawComponent } from './manage-account/withdraw/withdraw.component';
 
 @NgModule({
   declarations: [
-    AppComponent, AdminComponent, ClientComponent, CreateClientComponent, CreatePasswordComponent, LoginAdminComponent,LoginClientComponent,ViewClientComponent, CreateAccountComponent, ManageAccountComponent
+    AppComponent, AdminComponent, ClientComponent, CreateClientComponent, CreatePasswordComponent, LoginAdminComponent,LoginClientComponent,ViewClientComponent, CreateAccountComponent, ManageAccountComponent, BalanceComponent, DepositComponent, WithdrawComponent
   ],
   imports: [
     BrowserModule,

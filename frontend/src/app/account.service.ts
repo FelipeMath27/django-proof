@@ -21,4 +21,16 @@ export class AccountService {
     );
   }
 
+  getAccountBalance(account_number : string): Observable<number>{
+    return this.http.get<number>(`http://127.0.0.1:8000/manageClient/get_balance_accout/${account_number}`)
+  }
+
+  depositToAccount(accountNumber: string, amount: number): Observable<any> {
+    return this.http.patch<any>(`http://127.0.0.1:8000/manageClient/deposit_savings_account/${accountNumber}`, { deposit: amount });
+  }
+
+  withdrawFromAccount(accountNumber: string, amount: number): Observable<any> {
+    return this.http.patch<any>(`http://127.0.0.1:8000/manageClient/withdraw_account/${accountNumber}`, { withdraw: amount });
+  }
+
 }

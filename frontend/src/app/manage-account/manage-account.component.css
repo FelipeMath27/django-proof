@@ -1,87 +1,108 @@
-/* client-products.component.css */
-
 header {
-    background-color: #12372A; /* Color de fondo del encabezado */
-    color: #FBFADA; /* Color del texto del encabezado */
-    text-align: center;
-    padding: 20px 0;
-  }
-  
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  h1 {
-    margin: 0 0 10px; /* Margen inferior para el título principal */
-    color: #FBFADA; 
-    font-size: 1.5em; /* Tamaño de la fuente del título */
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 14px; /* Tamaño de la fuente más pequeño */
-    text-align: left;
-  }
-  
-  thead {
-    background-color: #3a8e6a; /* Verde más claro */
-    color: #FBFADA; 
-  }
-  
-  thead th,
-  tbody td {
-    padding: 8px; /* Tamaño de padding reducido */
-    border: 1px solid #ccc; 
-  }
-  
-  tbody tr {
-    cursor: pointer;
-  }
-  
-  tbody tr:hover {
-    background-color: #e0f7fa; /* Color de fondo al pasar el ratón */
-  }
-  
-  .actions {
-    display: flex;
-    gap: 10px; /* Espacio entre los botones */
-    margin-top: 20px;
-  }
-  
-  button {
-    padding: 6px 15px; /* Tamaño del botón reducido */
-    border: none;
-    border-radius: 5px;
-    background-color: #3a8e6a; /* Verde más claro */
-    color: #FBFADA; 
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 14px; /* Tamaño de la fuente más pequeño */
-    margin-right: 20px;
-  }
-  
-  button:hover {
-    background-color: #2c6d52; /* Color del botón al pasar el mouse */
-  }
-  
-  .error-message {
-    color: red;
-    font-weight: bold;
-    font-size: 14px; /* Tamaño de la fuente más pequeño */
-  }
-  
-  footer {
-    background-color: #12372A; 
-    color: #FBFADA; 
-    text-align: center;
-    padding: 20px 0;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-  }
-  
+  background-color: #12372A;
+  color: #FBFADA;
+  text-align: center;
+  padding: 20px 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0 0 10px;
+  color: #FBFADA;
+  font-size: 1.5em;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 6px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3a8e6a;
+  color: #FBFADA;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #2c6d52;
+}
+
+.instruction {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.input-wrapper {
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: 14px;
+  text-align: left;
+}
+
+thead {
+  background-color: #3a8e6a;
+  color: #FBFADA;
+}
+
+thead th,
+tbody td {
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+tbody tr {
+  cursor: pointer;
+}
+
+tbody tr:hover {
+  background-color: #e0f7fa;
+}
+
+footer {
+  background-color: #12372A;
+  color: #FBFADA;
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.balance-box {
+  border: 2px solid #3a8e6a; /* Borde sólido de color verde */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px; /* Espaciado interno */
+  margin-top: 20px; /* Margen superior */
+  text-align: center; /* Alineación centrada del contenido */
+  background-color: #e0f7fa; /* Color de fondo más claro */
+}
+
+.balance-text {
+  font-size: 16px; /* Tamaño de fuente */
+  color: #12372A; /* Color del texto */
+  margin: 0; /* Eliminar margen interno */
+}
