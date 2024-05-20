@@ -4,14 +4,14 @@
 <main class="main-login">
     <section class="login">
         <h2>Login</h2>
-        <form>
-            <label for="username">User</label>
-            <input type="text" name="username" id="name" required>
-            <label for="password" >Password</label>
-            <input type="password" name="password" id="password" required>
-            <button>Sign in</button>
+        <form (ngSubmit)="onSubmit()">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" [(ngModel)]="email" required>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" [(ngModel)]="password" required>
+            <button type="submit">Sign in</button>
             <h4>If this is your first time logging in, create the password.</h4>
-            <a routerLink="/create-password" routerLinkActive="admin-login">CreatePassword</a>
+            <a routerLink="/create-password">Create Password</a>
         </form>
     </section>
 </main>

@@ -16,15 +16,24 @@ class Client(models.Model):
     def __str__(self):
         return self.name
     
+    @classmethod
+    def get_by_email(cls, email):
+        try:
+            return cls.objects.get(str_email_client=email)
+        except cls.DoesNotExist:
+            return None
+    
 
 class Password(models.Model):
     num_id_pswrd = models.AutoField(primary_key=True)
-    num_id_client = models.ForeignKey(Client, on_delete=models.CASCADE)
+    num_id_client = models.ForeignKey(Client, on_delete=models.CASCADE, db_column='num_id_client')
     str_paswrd_client = models.CharField(max_length=100)
 
     class Meta:
-        db_table = 'djn_tbl_psw'
+        db_table = 'djn_tbl_pasw'
         app_label = 'ClientApp'
     
     def __str__(self):
         return self.name
+    
+    

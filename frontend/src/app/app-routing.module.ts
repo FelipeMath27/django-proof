@@ -6,6 +6,7 @@ import { CreatePasswordComponent } from './create-password/create-password.compo
 import { AdminComponent } from './admin/admin.component';
 import { CreateClientComponent } from './create-client/create-client.component';
 import { ViewClientComponent } from './view-client/view-client.component';
+import { ClientComponent } from './client/client.component';
 
 
 export const routes: Routes = [
@@ -16,6 +17,7 @@ export const routes: Routes = [
   {path : 'manageAdmin', component: AdminComponent},
   {path : 'manageAdmin/createClient', component: CreateClientComponent},
   {path : 'manageAdmin/getClient/:document', component: ViewClientComponent},
+  {path : 'client-login/home', component : ClientComponent},
 ];
 
 @NgModule({

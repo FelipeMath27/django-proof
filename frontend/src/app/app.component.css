@@ -45,6 +45,7 @@ body{
 
 .login input[type="text"],
 .login input[type="password"],
+.login input[type="email"],
 .login button {
     text-align: center;
     padding: 10px;
