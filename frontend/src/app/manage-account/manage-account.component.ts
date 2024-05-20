@@ -3,6 +3,7 @@ import GetSavinsAccount from '../interfaces/GetSavingsAccount';
 import { AccountService } from '../account.service';
 import { AuthService } from '../auth.service';
 import { isPlatformBrowser } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-manage-account',
@@ -22,7 +23,7 @@ export class ManageAccountComponent implements OnInit {
   otp: number | undefined;
 
   constructor(private accountService: AccountService, private authService: AuthService,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: Object, private router: Router
   ){}
 
   ngOnInit(): void {
@@ -139,5 +140,20 @@ export class ManageAccountComponent implements OnInit {
     this.showDeposit = false;
     this.showWithdraw = false;
     this.showBalance = false;
+  }
+
+  signOutManageClient(): void {
+    this.authService.signOutClient().subscribe(
+      (response) => {
+        if (response.message === 'Logout successful') {
+          this.router.navigate(['/client-login']);
+        } else {
+          console.error('Error during logout.');
+        }
+      },
+      (error) => {
+        console.error('Error during logout. Please try again later.');
+      }
+    );
   }
 }
