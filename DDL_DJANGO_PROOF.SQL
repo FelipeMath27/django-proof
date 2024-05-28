@@ -195,7 +195,7 @@ END;
 VALUES (1, 1, hash_password('mi_contraseña_secreta'));*/
 
 --Example how to insert a password for admin
-/*INSERT INTO DJB_TBL_ADMIN (num_id_adin, str_user_admin, str_pasw)
+/*INSERT INTO DJN_TBL_ADMIN (str_user_admin, str_pasw)
 VALUES ('adminDjango', hash_password('pepito123'));*/
 
 
