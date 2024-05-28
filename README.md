@@ -46,10 +46,10 @@ This savings account management system is designed to be used as a competitive p
   - *Withdrawal with static OTP generation.*
 
 ## Oracle Database Configuration
--Download https://visualstudio.microsoft.com/es/visual-cpp-build-tools/ v.14 +
--Use pip install cx_Oracle
--Configure settings.py with the DB info
-DATABASES = {
+- Download https://visualstudio.microsoft.com/es/visual-cpp-build-tools/ v.14 +
+- Use pip install cx_Oracle
+- Configure settings.py with the DB info
+- DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.oracle",
         "NAME": "SID",
